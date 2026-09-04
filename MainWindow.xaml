@@ -1,0 +1,66 @@
+﻿<Window x:Class="LoginExemplo.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="350" Width="400"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5"
+        Loaded="Window_Loaded">
+
+    <Grid>
+        <Border Background="White" Padding="30" CornerRadius="10"
+                Width="300" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <StackPanel>
+
+                
+                <TextBlock Text="Portaria digital"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+               
+                <TextBlock Text="Usuário" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtUser"
+                         Height="30"
+                         Margin="0,0,0,10"/>
+
+ 
+                <TextBlock Text="Senha" Margin="0,0,0,5"/>
+                <PasswordBox x:Name="pswSenha"
+                             Height="30"
+                             Margin="0,0,0,20"/>
+
+               
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <Button x:Name="btnLogar"
+                            Content="Entrar"
+                            Width="100"
+                            Margin="5"
+                            Background="#6200EE"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Click="btnLogar_Click"/>
+
+                    <Button x:Name="btnCadastrar"
+                            Content="Cadastrar"
+                            Width="100"
+                            Margin="5"
+                            Background="#6200EE"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Click="btnCadastrar_Click"/>
+                </StackPanel>
+				<Button x:Name="btnRemoverUsuario"
+                        Content="Remover Usuário"
+                        Width="100"
+                        Margin="5"
+                        Background="#ff0000"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Click="btnRemoverUsuario_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
