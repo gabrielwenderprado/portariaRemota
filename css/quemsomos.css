@@ -1,0 +1,220 @@
+/* ============================================================
+   CPMG — QUEM SOMOS
+   Estilos específicos para a página institucional
+   ============================================================ */
+
+/* HERO SECTION */
+.qs-hero {
+    background: var(--navy);
+    padding: 160px 48px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.qs-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(26, 95, 168, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.qs-hero .breadcrumb {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.qs-hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.qs-hero p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* MISSÃO E EQUIPE */
+.qs-mission {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 48px;
+}
+
+.qs-mission-text h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 28px;
+    line-height: 1.2;
+}
+
+.qs-mission-text p {
+    color: var(--gray);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.qs-mission-img {
+    position: relative;
+}
+
+.qs-mission-img::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--gray-light);
+    border-radius: 14px;
+    z-index: -1;
+}
+
+.qs-mission-img img {
+    width: 100%;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.qs-mission-img img:hover {
+    transform: scale(1.02);
+}
+
+/* VALORES INSTITUCIONAIS */
+.qs-values {
+    background: var(--off-white);
+    padding: 100px 48px;
+    position: relative;
+}
+
+.qs-values .section-header {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.value-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--blue-light);
+    box-shadow: 0 20px 40px rgba(13, 31, 60, 0.08);
+}
+
+.value-icon {
+    font-size: 32px;
+    margin-bottom: 24px;
+    display: inline-block;
+    background: var(--off-white);
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.value-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 14px;
+}
+
+.value-card p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+/* GALERIA / FOTO DESTAQUE */
+.qs-photo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 48px;
+}
+
+.qs-photo img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    max-height: 500px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .qs-mission {
+        gap: 40px;
+        padding: 80px 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .qs-hero { padding: 140px 24px 80px; }
+    
+    .qs-mission { 
+        grid-template-columns: 1fr; 
+        padding: 60px 24px; 
+        gap: 48px; 
+        text-align: center;
+    }
+    
+    .qs-mission-img { order: -1; max-width: 600px; margin: 0 auto; }
+    .qs-mission-img::after { display: none; }
+    
+    .qs-values { padding: 80px 24px; }
+    .values-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    
+    .qs-photo { padding: 40px 24px 80px; }
+}
+
+@media (max-width: 600px) {
+    .values-grid { grid-template-columns: 1fr; }
+    
+    .qs-hero h1 { font-size: 32px; }
+    .qs-hero p { font-size: 16px; }
+    
+    .value-card { padding: 30px 24px; }
+}
